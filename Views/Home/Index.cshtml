@@ -1,0 +1,24 @@
+﻿@using core_helloWorld.Controllers
+@model core_helloWorld.Models.PersonDetail
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h3> Hello World </h3>
+<br/>
+
+    @if (Model != null && !string.IsNullOrEmpty(Model.Name))
+    {
+        <h3> Hello @Model.Name </h3>
+    }
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post)) {
+
+<p> Please enter you name </p>
+@Html.TextBoxFor(model => model.Name)
+
+<button type="submit">Click Here </button>
+}
+
